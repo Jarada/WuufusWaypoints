@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.github.jarada.waypoints.data.Waypoint;
-import org.apache.commons.lang.WordUtils;
+import org.apache.commons.text.WordUtils;
 import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
