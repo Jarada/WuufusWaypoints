@@ -124,7 +124,8 @@ public class PlayerListener implements Listener {
         }
 
         PlayerData pd = wm.getPlayerData(p.getUniqueId());
-        boolean silenceWaypoints = (pd.isSilentWaypoints() && p.getInventory().contains(dm.BEACON));
+        boolean silenceWaypoints = !DataManager.getManager().SHOW_MENU_ON_WALK ||
+                (pd.isSilentWaypoints() && p.getInventory().contains(dm.BEACON));
 
         // Spawn
         if (Util.isSameLoc(p.getWorld().getSpawnLocation(), to, true)) {

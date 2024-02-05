@@ -214,7 +214,7 @@ public class WaypointMenu implements Listener {
             ItemStack is = new ItemStack(Material.DARK_OAK_DOOR, 1);
             Util.setItemNameAndLore(is, Util.color(Msg.MENU_PAGE_CLOSE.toString()), null);
             setOption(dataSize + 8, "Root", is);
-        } else if (fromBeacon) {
+        } else if (fromBeacon && DataManager.getManager().SHOW_MENU_ON_WALK) {
             ItemStack is = new ItemStack(Material.LEATHER_BOOTS, 1);
 
             List<String> lore = new ArrayList<>();
