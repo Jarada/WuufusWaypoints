@@ -42,6 +42,7 @@ public class DataManager {
     public MenuSize            MENU_SIZE;
     public boolean             ENABLE_BEACON;
     public boolean             BEACON_AS_BOOK;
+    public BeaconConsumptionMode BEACON_CONSUMPTION_MODE;
     public boolean             BEACON_UNLIMITED_PERMANENT;
     public int                 BEACON_UNLIMITED_PERMANENT_SLOT;
     public boolean             BEACON_UNLIMITED_PERMANENT_IMMOVABLE;
@@ -89,6 +90,7 @@ public class DataManager {
         config.addDefault("Waypoints.MENU_SIZE", "compact");
         config.addDefault("Waypoints.ENABLE_BEACON", true);
         config.addDefault("Waypoints.BEACON_AS_BOOK", false);
+        config.addDefault("Waypoints.BEACON_CONSUMPTION_MODE", "teleport");
         config.addDefault("Waypoints.BEACON_UNLIMITED_PERMANENT", false);
         config.addDefault("Waypoints.BEACON_UNLIMITED_PERMANENT_SLOT", 0);
         config.addDefault("Waypoints.BEACON_UNLIMITED_PERMANENT_IMMOVABLE", false);
@@ -131,6 +133,13 @@ public class DataManager {
         } catch (IllegalArgumentException e) {
             MENU_SIZE = MenuSize.COMPACT;
             pm.getLogger().warning("Invalid Menu Size in Config, using compact!");
+        }
+
+        try {
+            BEACON_CONSUMPTION_MODE = BeaconConsumptionMode.valueOf(config.getString("Waypoints.BEACON_CONSUMPTION_MODE").toUpperCase());
+        } catch (IllegalArgumentException e) {
+            BEACON_CONSUMPTION_MODE = BeaconConsumptionMode.MENU;
+            pm.getLogger().warning("Invalid Beacon Consumption Mode in Config, using menu!");
         }
 
         try {

@@ -2,6 +2,7 @@ package com.github.jarada.waypoints.listeners;
 
 import java.util.Iterator;
 
+import com.github.jarada.waypoints.data.BeaconConsumptionMode;
 import org.bukkit.GameMode;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
@@ -39,10 +40,11 @@ public class BeaconListener implements Listener {
     public void onBeaconUse(BeaconUseEvent useEvent) {
         Player p = useEvent.getPlayer();
         Action a = useEvent.getAction();
-        ItemStack is = p.getInventory().getItemInMainHand();
 
         if (p.hasPermission("wp.beacon.use") && (a == Action.RIGHT_CLICK_BLOCK || a == Action.RIGHT_CLICK_AIR)) {
-            if (!p.hasPermission("wp.beacon.unlimited")) {
+            if (DataManager.getManager().BEACON_CONSUMPTION_MODE == BeaconConsumptionMode.MENU &&
+                    !p.hasPermission("wp.beacon.unlimited")) {
+                ItemStack is = p.getInventory().getItemInMainHand();
                 is.setAmount(is.getAmount() - 1);
                 p.getInventory().setItemInMainHand(is);
             }

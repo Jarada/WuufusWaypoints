@@ -128,6 +128,13 @@ public class WaypointMenu implements Listener {
                     else
                         Bukkit.getScheduler().runTask(pm, new TeleportTask(p, optionWaypoints[slot]));
 
+                    ItemStack is = p.getInventory().getItemInMainHand();
+                    if (DataManager.getManager().BEACON_CONSUMPTION_MODE == BeaconConsumptionMode.TELEPORT &&
+                            !p.hasPermission("wp.beacon.unlimited") && is.isSimilar(DataManager.getManager().BEACON)) {
+                        is.setAmount(is.getAmount() - 1);
+                        p.getInventory().setItemInMainHand(is);
+                    }
+
                     p.closeInventory();
                 }
 
