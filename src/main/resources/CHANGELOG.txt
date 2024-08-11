@@ -1,5 +1,9 @@
 CHANGELOG
 
+2.3.0 (08/17/2024)
+- Update for 1.21 release, built using Java 17
+- Minor fixes to Waypoint saving and recipe removing
+
 2.2.11 (02/08/2024)
 - Added ability to globally disable menu being shown when walking over Waypoints (config:
   Waypoints.SHOW_MENU_ON_WALK)
