@@ -183,6 +183,12 @@ public class DataManager {
                         .setIngredient('R', Material.REDSTONE)
                         .setIngredient('C', Material.COMPASS);
             }
+            try {
+                if (Bukkit.getRecipe(sr.getKey()) != null)
+                    Bukkit.removeRecipe(sr.getKey());
+            } catch (NoSuchMethodError e) {
+                // 1.15- Support
+            }
             Bukkit.addRecipe(sr);
 
             Bukkit.getPluginManager().registerEvents(BeaconListener.getListener(), pm);
@@ -293,7 +299,8 @@ public class DataManager {
                 for (Category cat : wm.getCategories().values()) {
                     cat.serialize(wc, "categories." + Util.getKey(cat.getName()));
                 }
-                wc.save(waypointConfigFile);
+                if (wc.saveToString().length() > 0)
+                    wc.save(waypointConfigFile);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -396,6 +403,8 @@ public class DataManager {
                 pc.save(playerFile);
             } catch (IOException e) {
                 e.printStackTrace();
+            } catch (NullPointerException e) {
+                pm.getLogger().warning("Unable to find player with UUID " + playerUUID);
             }
         }
 
