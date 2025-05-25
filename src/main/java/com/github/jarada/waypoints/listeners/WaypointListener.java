@@ -20,7 +20,7 @@ import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BookMeta;
 
-import com.github.jarada.waypoints.Util;
+import com.github.jarada.waypoints.util.Util;
 import com.github.jarada.waypoints.data.DataManager;
 import com.github.jarada.waypoints.data.Msg;
 import com.github.jarada.waypoints.data.PlayerData;

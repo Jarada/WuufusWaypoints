@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 import org.bukkit.Location;
 
-import com.github.jarada.waypoints.Util;
+import com.github.jarada.waypoints.util.Util;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 

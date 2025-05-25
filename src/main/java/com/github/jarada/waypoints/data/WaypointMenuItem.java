@@ -1,6 +1,6 @@
 package com.github.jarada.waypoints.data;
 
-import com.github.jarada.waypoints.Util;
+import com.github.jarada.waypoints.util.Util;
 
 public class WaypointMenuItem {
 

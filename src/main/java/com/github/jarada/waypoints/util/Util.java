@@ -1,9 +1,10 @@
-package com.github.jarada.waypoints;
+package com.github.jarada.waypoints.util;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import com.github.jarada.waypoints.WaypointManager;
 import com.github.jarada.waypoints.data.Waypoint;
 import org.apache.commons.text.WordUtils;
 import org.bukkit.*;

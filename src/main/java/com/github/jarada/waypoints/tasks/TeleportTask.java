@@ -3,9 +3,7 @@ package com.github.jarada.waypoints.tasks;
 import com.github.jarada.waypoints.WaypointManager;
 import com.github.jarada.waypoints.data.*;
 import org.bukkit.Bukkit;
-import org.bukkit.Effect;
 import org.bukkit.Location;
-import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -16,7 +14,7 @@ import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 import org.bukkit.metadata.FixedMetadataValue;
 
 import com.github.jarada.waypoints.PluginMain;
-import com.github.jarada.waypoints.Util;
+import com.github.jarada.waypoints.util.Util;
 
 public class TeleportTask implements Listener, Runnable {
 

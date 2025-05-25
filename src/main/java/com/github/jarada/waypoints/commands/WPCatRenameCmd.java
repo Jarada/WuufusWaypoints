@@ -1,13 +1,10 @@
 package com.github.jarada.waypoints.commands;
 
-import com.github.jarada.waypoints.SelectionManager;
-import com.github.jarada.waypoints.Util;
 import com.github.jarada.waypoints.WaypointManager;
 import com.github.jarada.waypoints.data.Category;
 import com.github.jarada.waypoints.data.DataManager;
 import com.github.jarada.waypoints.data.Msg;
 import com.github.jarada.waypoints.data.Waypoint;
-import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 
 public class WPCatRenameCmd extends WPCatCmd {

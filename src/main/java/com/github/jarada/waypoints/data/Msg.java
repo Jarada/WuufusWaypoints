@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import org.bukkit.command.CommandSender;
 
 import com.github.jarada.waypoints.PluginMain;
-import com.github.jarada.waypoints.Util;
+import com.github.jarada.waypoints.util.Util;
 
 public enum Msg {
 

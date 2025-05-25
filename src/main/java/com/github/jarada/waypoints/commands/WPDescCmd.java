@@ -3,7 +3,7 @@ package com.github.jarada.waypoints.commands;
 import org.bukkit.command.CommandSender;
 
 import com.github.jarada.waypoints.SelectionManager;
-import com.github.jarada.waypoints.Util;
+import com.github.jarada.waypoints.util.Util;
 import com.github.jarada.waypoints.data.DataManager;
 import com.github.jarada.waypoints.data.Msg;
 import com.github.jarada.waypoints.data.Waypoint;

@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
-import com.github.jarada.waypoints.PluginMain;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -21,7 +20,7 @@ import org.bukkit.event.player.*;
 import org.bukkit.inventory.ItemStack;
 
 import com.github.jarada.waypoints.SelectionManager;
-import com.github.jarada.waypoints.Util;
+import com.github.jarada.waypoints.util.Util;
 import com.github.jarada.waypoints.WaypointManager;
 import com.github.jarada.waypoints.data.DataManager;
 import com.github.jarada.waypoints.data.Msg;

@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import com.github.jarada.waypoints.data.*;
 import com.github.jarada.waypoints.menus.WaypointMenu;
+import com.github.jarada.waypoints.util.Util;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

@@ -7,6 +7,7 @@ import java.util.UUID;
 import com.github.jarada.waypoints.data.Category;
 import com.github.jarada.waypoints.data.Msg;
 import com.github.jarada.waypoints.data.Waypoint;
+import com.github.jarada.waypoints.util.Util;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;

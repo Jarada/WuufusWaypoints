@@ -24,7 +24,7 @@ import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.ShapedRecipe;
 
 import com.github.jarada.waypoints.PluginMain;
-import com.github.jarada.waypoints.Util;
+import com.github.jarada.waypoints.util.Util;
 import com.github.jarada.waypoints.WaypointManager;
 
 public class DataManager {

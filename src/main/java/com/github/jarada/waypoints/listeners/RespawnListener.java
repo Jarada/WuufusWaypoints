@@ -12,7 +12,7 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerRespawnEvent;
 
-import com.github.jarada.waypoints.Util;
+import com.github.jarada.waypoints.util.Util;
 import com.github.jarada.waypoints.WaypointManager;
 import com.github.jarada.waypoints.data.DataManager;
 import com.github.jarada.waypoints.data.Msg;

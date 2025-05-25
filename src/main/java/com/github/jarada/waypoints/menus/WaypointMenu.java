@@ -2,7 +2,7 @@ package com.github.jarada.waypoints.menus;
 
 import com.github.jarada.waypoints.PluginMain;
 import com.github.jarada.waypoints.SelectionManager;
-import com.github.jarada.waypoints.Util;
+import com.github.jarada.waypoints.util.Util;
 import com.github.jarada.waypoints.WaypointManager;
 import com.github.jarada.waypoints.data.*;
 import com.github.jarada.waypoints.tasks.TeleportTask;
