@@ -13,6 +13,7 @@ public class Waypoint extends GridLocation {
     private Material          icon;
     private short             durability;
     private Boolean           discoverable;
+    private boolean           dynamic;
     private boolean           enabled;
 
     public Waypoint(String name, Location loc) {
@@ -34,6 +35,7 @@ public class Waypoint extends GridLocation {
             setHint("");
         setDurability(Serializer.getShort(config, prefix, "icon_damage"));
         setDiscoverable(Serializer.getBoolean(config, prefix, "discoverable"));
+        setDynamic(Serializer.getBoolean(config, prefix, "dynamic"));
         setEnabled(Serializer.getBoolean(config, prefix, "enabled"));
         String input = Serializer.getString(config, prefix, "icon");
         if (input != null) {
@@ -56,6 +58,7 @@ public class Waypoint extends GridLocation {
         Serializer.set(config, prefix, "icon", getIcon().getKey().toString());
         Serializer.set(config, prefix, "icon_damage", getDurability());
         Serializer.set(config, prefix, "discoverable", isDiscoverable());
+        Serializer.set(config, prefix, "dynamic", isDynamic());
         Serializer.set(config, prefix, "enabled", isEnabled());
         Serializer.set(config, prefix, "category", getCategory());
     }
@@ -65,6 +68,20 @@ public class Waypoint extends GridLocation {
             uuid = UUID.randomUUID();
 
         return uuid;
+    }
+
+    public Location getYAdjustedLocation(Location playerLoc) {
+        return getYAdjustedLocation(playerLoc, false);
+    }
+
+    public Location getYAdjustedLocation(Location playerLoc, boolean force) {
+        Location current = getLocation();
+        if (isDynamic() || force) current.setY(playerLoc.getY());
+        return current;
+    }
+
+    public Location getDynamicLocation() {
+        return isDynamic() ? getHighestLocation() : getLocation();
     }
 
     public String getName() {
@@ -113,6 +130,14 @@ public class Waypoint extends GridLocation {
 
     public void setDiscoverable(Boolean discoverable) {
         this.discoverable = discoverable;
+    }
+
+    public boolean isDynamic() {
+        return dynamic;
+    }
+
+    public void setDynamic(boolean dynamic) {
+        this.dynamic = dynamic;
     }
 
     public boolean isEnabled() {

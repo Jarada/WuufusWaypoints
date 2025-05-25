@@ -27,6 +27,8 @@ public enum Msg {
     DISCOVERY_MODE_DISABLED("&6%s: &fDiscovery mode disabled."),
     DISCOVERY_MODE_ENABLED_SERVER("&6%s: &fDiscovery mode set to &aServer-wide&f."),
     DISCOVERY_MODE_ENABLED_WORLD("&6%s: &fDiscovery mode set to &aWorld-specific&f."),
+    DYNAMIC_MODE_DISABLED("&6%s: &fDynamic mode disabled."),
+    DYNAMIC_MODE_ENABLED("&6%s: &fDynamic mode enabled. Waypoint will now operate on highest possible y-axis non-air block."),
     HOME_WP_ALREADY_HERE("&cError: &fHome waypoint &6%s &falready lies at this location."),
     HOME_WP_CREATED("&aSuccess: &fCoordinates received for &6%s&f."),
     HOME_WP_FULL("You have the maximum number of home waypoints, adding another will replace the oldest one."),

@@ -82,14 +82,14 @@ public class Util {
         if (wp.isDiscoverable() != null
                 && WaypointManager.getManager().getPlayerData(p.getUniqueId()).hasDiscovered(wp.getUUID()))
             return wp.isDiscoverable() || (select || p.getWorld().getName()
-                    .equals(wp.getLocation().getWorld().getName()));
+                    .equals(wp.getDynamicLocation().getWorld().getName()));
 
         return false;
     }
 
     public static boolean canDiscover(Player p, Waypoint wp) {
         return wp.isDiscoverable() != null && (wp.isDiscoverable() || p.getWorld().getName()
-                .equals(wp.getLocation().getWorld().getName())) &&
+                .equals(wp.getDynamicLocation().getWorld().getName())) &&
                 !WaypointManager.getManager().getPlayerData(p.getUniqueId()).hasDiscovered(wp.getUUID());
     }
 

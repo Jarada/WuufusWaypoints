@@ -44,7 +44,7 @@ public class RespawnListener implements Listener {
             Waypoint home = null;
 
             for (Waypoint wp : pd.getAllWaypoints()) {
-                if (Util.isSameLoc(pd.getSpawnPoint(), wp.getLocation(), true)) {
+                if (Util.isSameLoc(pd.getSpawnPoint(), wp.getDynamicLocation(), true)) {
                     home = wp;
                     break;
                 }
@@ -70,8 +70,8 @@ public class RespawnListener implements Listener {
                 HashMap<Double, Waypoint> distances = new HashMap<Double, Waypoint>();
 
                 for (Waypoint wp : pd.getAllWaypoints())
-                    if (p.getWorld().getName().equals(wp.getLocation().getWorld().getName()))
-                        distances.put(p.getLocation().distanceSquared(wp.getLocation()), wp);
+                    if (p.getWorld().getName().equals(wp.getDynamicLocation().getWorld().getName()))
+                        distances.put(p.getLocation().distanceSquared(wp.getDynamicLocation()), wp);
 
                 if (dm.RESPAWN_INCLUDE_BED_IN_HOME_SPAWN_MODE && p.getBedSpawnLocation() != null)
                     distances.put(p.getLocation().distanceSquared(p.getBedSpawnLocation()), new Waypoint("Bed", p.getBedSpawnLocation()));
@@ -83,7 +83,7 @@ public class RespawnListener implements Listener {
                         key = dist;
 
                 if (key != null)
-                    spawnLoc = Util.getSafeLocation(distances.get(key).getLocation());
+                    spawnLoc = Util.getSafeLocation(distances.get(key).getDynamicLocation());
             }
 
             if (spawnLoc == null || dm.SPAWN_MODE == SpawnMode.BED)

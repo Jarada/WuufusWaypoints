@@ -263,7 +263,7 @@ public class WaypointMenu implements Listener {
     }
 
     public void setOption(int slot, Waypoint wp, boolean discoverable, boolean selected) {
-        Location loc = wp.getLocation();
+        Location loc = wp.getDynamicLocation();
         String displayName = "&6" + wp.getName();
 
         if (!wp.isEnabled() && WaypointManager.getManager().isServerDefined(wp))

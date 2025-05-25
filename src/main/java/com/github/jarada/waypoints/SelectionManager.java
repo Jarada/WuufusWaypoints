@@ -77,7 +77,7 @@ public class SelectionManager {
 
     private void sendSelectionInfo(CommandSender sender, Waypoint wp) {
         boolean serverDefined = WaypointManager.getManager().isServerDefined(wp);
-        Location loc = wp.getLocation();
+        Location loc = wp.getDynamicLocation();
         String displayName = wp.getName();
         Category category = wp.getCategory() != null ? WaypointManager.getManager().getCategoryFromUUID(wp.getCategory()) : null;
 

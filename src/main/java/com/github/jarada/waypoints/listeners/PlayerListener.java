@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
+import com.github.jarada.waypoints.PluginMain;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -58,8 +59,8 @@ public class PlayerListener implements Listener {
             waypoints.addAll(wm.getPlayerData(p.getUniqueId()).getAllWaypoints());
 
             for (Waypoint wp : waypoints) {
-                if (Util.isSameLoc(clicked.getLocation(), wp.getLocation(), true) ||
-                        Util.isSameLoc(toCheckAbove, wp.getLocation(), true)) {
+                if (Util.isSameLoc(clicked.getLocation(), wp.getDynamicLocation(), true) ||
+                        Util.isSameLoc(toCheckAbove, wp.getDynamicLocation(), true)) {
                     Bukkit.getPluginManager().callEvent(
                             new WaypointInteractEvent(p, wp, a, is, clicked.isBlockPowered()));
                     event.setCancelled(true);
@@ -139,7 +140,7 @@ public class PlayerListener implements Listener {
 
         // Global Waypoints
         for (Waypoint wp : wm.getWaypoints().values()) {
-            if (Util.isSameLoc(wp.getLocation(), to, true) && (wp.isEnabled() || p.hasPermission("wp.bypass"))) {
+            if (Util.isSameLoc(wp.getDynamicLocation(), to, true) && (wp.isEnabled() || p.hasPermission("wp.bypass"))) {
                 boolean discovered = false;
                 if (wp.isDiscoverable() != null && !pd.hasDiscovered(wp.getUUID())) {
                     pd.addDiscovery(wp.getUUID());
@@ -162,7 +163,7 @@ public class PlayerListener implements Listener {
 
         // Player Waypoints
         for (Waypoint wp : pd.getAllWaypoints()) {
-            if (Util.isSameLoc(wp.getLocation(), to, true)) {
+            if (Util.isSameLoc(wp.getDynamicLocation(), to, true)) {
                 wm.openWaypointMenu(p, wp, false, true, false);
                 return;
             }

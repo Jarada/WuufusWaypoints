@@ -39,6 +39,7 @@ public class PluginMain extends JavaPlugin {
         commands.put("beaconperm", new WPBeaconPermanentCmd());
         commands.put("desc", new WPDescCmd());
         commands.put("discover", new WPDiscoverCmd());
+        commands.put("dynamic", new WPDynamicCmd());
         commands.put("hint", new WPHintCmd());
         commands.put("icon", new WPIconCmd());
         commands.put("move", new WPMoveCmd());

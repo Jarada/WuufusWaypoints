@@ -215,7 +215,7 @@ public class WaypointManager {
         if (!select) {
             if (currentWaypoint != null) {
                 Msg.OPEN_WP_MENU.sendTo(p, currentWaypoint.getName());
-                p.teleport(Util.teleportLocation(currentWaypoint.getLocation()), TeleportCause.PLUGIN);
+                p.teleport(Util.teleportLocation(currentWaypoint.getDynamicLocation()), TeleportCause.PLUGIN);
             } else {
                 Msg.REMOTELY_ACCESSED.sendTo(p);
             }
@@ -293,7 +293,7 @@ public class WaypointManager {
         }
 
         for (Waypoint wp : pd.getAllWaypoints()) {
-            if (Util.isSameLoc(playerLoc, wp.getLocation(), true)) {
+            if (Util.isSameLoc(playerLoc, wp.getDynamicLocation(), true)) {
                 Msg.HOME_WP_ALREADY_HERE.sendTo(p, wp.getName());
                 return false;
             }

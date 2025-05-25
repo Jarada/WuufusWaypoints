@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.World;
+import org.bukkit.block.Block;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 public class GridLocation implements Serializable {
@@ -36,6 +38,13 @@ public class GridLocation implements Serializable {
 
     public Location getLocation() {
         return new Location(Bukkit.getWorld(worldName), x, y, z, yaw, pitch);
+    }
+
+    public Location getHighestLocation() {
+        World world = Bukkit.getWorld(worldName);
+        if (world == null) return null;
+        Block block = world.getHighestBlockAt(x, z);
+        return new Location(world, block.getX(), block.getY() + 1, block.getZ(), yaw, pitch);
     }
 
     public void setLocation(Location loc) {

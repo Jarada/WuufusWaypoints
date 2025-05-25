@@ -53,8 +53,8 @@ public class WaypointListener implements Listener {
             }
 
             SelectionManager.getManager().clearSelectionsWith(wp);
-            Util.playSound(wp.getLocation(), Sound.BLOCK_GLASS_BREAK);
-            Util.playEffect(wp.getLocation(), Effect.ENDER_SIGNAL);
+            Util.playSound(wp.getDynamicLocation(), Sound.BLOCK_GLASS_BREAK);
+            Util.playEffect(wp.getDynamicLocation(), Effect.ENDER_SIGNAL);
 
             is.setAmount(is.getAmount() - 1);
             p.getInventory().setItemInMainHand(is);
@@ -68,7 +68,7 @@ public class WaypointListener implements Listener {
         if (dm.ENABLE_BEACON && dm.HANDLE_RESPAWNING && p.hasPermission("wp.respawn") && is.isSimilar(dm.BEACON)) {
             if (event.isPowered()) {
                 PlayerData pd = event.getPlayerData();
-                pd.setSpawnPoint(wp.getLocation());
+                pd.setSpawnPoint(wp.getDynamicLocation());
                 dm.savePlayerData(p.getUniqueId());
 
                 if (!p.hasPermission("wp.beacon.unlimited")) {
@@ -134,8 +134,8 @@ public class WaypointListener implements Listener {
         } else
             return;
 
-        Util.playSound(wp.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP);
-        Util.playEffect(wp.getLocation(), Effect.ENDER_SIGNAL);
+        Util.playSound(wp.getDynamicLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP);
+        Util.playEffect(wp.getDynamicLocation(), Effect.ENDER_SIGNAL);
         dm.saveWaypoint(p, wp);
     }
 

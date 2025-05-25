@@ -26,6 +26,7 @@
        wp.access.*: true
        wp.beacon.*: true
        wp.discover: true
+       wp.dynamic: true
        wp.respawn: true
        wp.spawn.beacon: true
      default: op
@@ -75,6 +76,8 @@
      description: Grants ability to set a selected waypoint's description using commands
    wp.discover:
      description: Grants ability to set a Waypoint's Discovery Mode
+   wp.dynamic:
+     description: Grants ability to set a Waypoint's Dynamic Mode
    wp.hint:
      description: Grants ability to set a selected waypoint's hint used when showing waypoints in discovery mode using commands
    wp.icon:

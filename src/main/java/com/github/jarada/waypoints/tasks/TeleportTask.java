@@ -34,7 +34,7 @@ public class TeleportTask implements Listener, Runnable {
         dm = DataManager.getManager();
         wm = WaypointManager.getManager();
 
-        destination = Util.getSafeLocation(wp.getLocation());
+        destination = Util.getSafeLocation(wp.getDynamicLocation());
         counter = p.hasPermission("wp.instant") ? 1 : 5;
         this.p = p;
         this.wp = wp;
@@ -83,7 +83,7 @@ public class TeleportTask implements Listener, Runnable {
                     Location from = p.getLocation();
                     from.setY(from.getY() + 2);
 
-                    Location to = wp.getLocation();
+                    Location to = wp.getDynamicLocation();
                     to.setY(to.getY() + 2);
 
                     dm.WARP_EFFECT.playWarpingEffectAtLocation(from, false);
