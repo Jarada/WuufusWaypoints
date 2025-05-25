@@ -2,6 +2,7 @@ package com.github.jarada.waypoints.menus;
 
 import com.github.jarada.waypoints.PluginMain;
 import com.github.jarada.waypoints.SelectionManager;
+import com.github.jarada.waypoints.util.ItemStackUtil;
 import com.github.jarada.waypoints.util.Util;
 import com.github.jarada.waypoints.WaypointManager;
 import com.github.jarada.waypoints.data.*;
@@ -97,8 +98,8 @@ public class WaypointMenu implements Listener {
 
     @EventHandler(priority = EventPriority.HIGHEST)
     void onInventoryClick(InventoryClickEvent clickEvent) {
-        if (!Arrays.equals(clickEvent.getInventory().getContents(), optionIcons)
-                || p != (Player) clickEvent.getWhoClicked())
+        if (!ItemStackUtil.equals(clickEvent.getInventory().getContents(), optionIcons)
+                || p != clickEvent.getWhoClicked())
             return;
 
         clickEvent.setCancelled(true);
