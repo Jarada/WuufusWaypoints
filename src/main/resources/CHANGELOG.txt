@@ -1,5 +1,9 @@
 CHANGELOG
 
+2.3.1 (05/25/2025)
+- Added support for Dynamic Waypoints, that keep a Waypoint at the highest position on the y-axis
+- Fix for 1.21.5 release, thanks to datatags on Github
+
 2.3.0 (08/17/2024)
 - Update for 1.21 release, built using Java 17
 - Minor fixes to Waypoint saving and recipe removing
